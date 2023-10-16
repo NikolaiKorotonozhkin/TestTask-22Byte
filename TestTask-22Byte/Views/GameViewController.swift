@@ -120,7 +120,7 @@ class GameViewController: UIViewController {
     }
     
     func drawFinalGame() {
-        view.backgroundColor = .darkGray
+        statusLabel.backgroundColor = .darkGray
         statusLabel.text = " НИЧЬЯ в Игре! "
         
         nextRoundButton.isHidden = true
