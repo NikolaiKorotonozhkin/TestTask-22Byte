@@ -20,7 +20,6 @@ class MenuViewController: UIViewController {
         
         setupViews()
         setConstraints()
-
     }
     
     @objc func gameButtonPressed() {

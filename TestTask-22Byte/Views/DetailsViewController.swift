@@ -36,7 +36,6 @@ class DetailsViewController: UIViewController {
     
     private func setupViews() {
         title = "Player Details"
-//        view.backgroundColor = .white
         view.backgroundColor = .init(red: 171/255, green: 237/255, blue: 216/255, alpha: 1)
         
         labelsStackView = UIStackView(arrangedSubviews: [nameLabel, totalWinsLabel])

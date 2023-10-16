@@ -77,7 +77,6 @@ class MainCell: UITableViewCell {
         ])
     }
     
-    
     func setupCell(array: Base.GameInfo) {
         nameLable.text = "Имя: " + array.name
         gameResultLable.text = "Результат игры: " + array.gameResult
@@ -92,9 +91,6 @@ class MainCell: UITableViewCell {
         round1Label.text = "Раунд 1: " + array.roundsArray[0]
         round2Label.text = "Раунд 2: " + array.roundsArray[1]
         round3Label.text = "Раунд 3: " + array.roundsArray[2]
-        
-        
-
         
         switch array.gameResult {
         case "win":

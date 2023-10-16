@@ -6,11 +6,10 @@
 //
 
 import Foundation
-
 import GameplayKit
 
 let randomChoice = GKRandomDistribution(lowestValue: 0, highestValue: 2)
-//let randonNumber = Int.random(in: 0...5)
+//let randomChoice = Int.random(in: 0...2)
 
 func randomSign() -> Sign {
     

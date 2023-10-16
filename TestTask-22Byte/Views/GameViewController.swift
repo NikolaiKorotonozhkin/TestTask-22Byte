@@ -136,6 +136,9 @@ class GameViewController: UIViewController {
         statusLabel.textColor = .black
         
         robotButton.setTitle("", for: .normal)
+        robotButton.setImage(nil, for: .normal)
+        
+        rockButton.isHidden = true
         robotButton.alpha = 0
         
         rockButton.isHidden = false
@@ -157,7 +160,8 @@ class GameViewController: UIViewController {
         statusLabel.backgroundColor = .white
         statusLabel.textColor = .black
         
-        robotButton.setTitle("", for: .normal)
+        robotButton.isHidden = true
+        robotButton.setImage(nil, for: .normal)
         
         rockButton.isHidden = false
         paperButton.isHidden = false
@@ -266,7 +270,6 @@ class GameViewController: UIViewController {
     }
     
     func resultOfRound (_ result: GameState, _ computerSign: Sign) {
-//        self.robotButton.setTitle(computerSign.emoji, for: .normal)
         
         switch computerSign {
         case .rock:
@@ -281,7 +284,6 @@ class GameViewController: UIViewController {
         case .win:
             statusLabel.text = " Ты выиграл раунд! "
             winRoundsCountLabel.text = String(winRoundsCount)
-//            self.view.backgroundColor = UIColor.green
             statusLabel.backgroundColor = .systemGreen
             
             //MARK: Три победы у игрока
@@ -303,7 +305,6 @@ class GameViewController: UIViewController {
         case .lose:
             statusLabel.text = " Ты проиграл раунд "
             loseRoundsCountLabel.text = String(loseRoundsCount)
-//            self.view.backgroundColor = UIColor.red
             statusLabel.backgroundColor = .red
             
             //MARK: Три победы у робота
@@ -351,7 +352,6 @@ class GameViewController: UIViewController {
             } else {
                 statusLabel.text = " Ничья в раунде "
                 statusLabel.backgroundColor = .darkGray
-//                view.backgroundColor = .darkGray
                 localDrawCount = 0
                 print("zero local draw count = \(localDrawCount)")
                 drawRoundsCountLabel.text = String(drawRoundsCount)
@@ -361,7 +361,6 @@ class GameViewController: UIViewController {
             if drawRoundsCount == 3 {
                 drawFinalGame()
             }
-            
         }
         
         countOfRounds += 1
@@ -376,8 +375,6 @@ class GameViewController: UIViewController {
         
         //показываем кнопку сл раунда
         nextRoundButton.isHidden = false
-        
     }
-    
 }
 

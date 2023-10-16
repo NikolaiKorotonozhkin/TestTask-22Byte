@@ -156,7 +156,6 @@ extension GameViewController {
             restartGameButton.widthAnchor.constraint(equalToConstant: view.frame.width / 2),
             restartGameButton.heightAnchor.constraint(equalToConstant: view.frame.height / 18),
             restartGameButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -view.frame.height / 40)
-            
         ])
     }
 }

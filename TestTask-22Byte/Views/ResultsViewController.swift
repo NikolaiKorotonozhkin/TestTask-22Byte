@@ -18,13 +18,11 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.backgroundColor = .white
         view.backgroundColor = .init(red: 171/255, green: 237/255, blue: 216/255, alpha: 1)
         view.addSubview(tableView)
         
         setupTableView()
         setConstraints()
-        
     }
     
     func setupTableView() {
@@ -61,8 +59,6 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let detailViewController = DetailsViewController(Base.shared.allGamesInfo[indexPath.row].name)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
-    
-    
     
     func setConstraints() {
         NSLayoutConstraint.activate([
