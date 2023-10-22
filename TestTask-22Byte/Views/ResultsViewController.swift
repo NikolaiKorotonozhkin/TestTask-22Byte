@@ -56,6 +56,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let detailViewController = DetailsViewController(Base.shared.allGamesInfo[indexPath.row].name)
         navigationController?.pushViewController(detailViewController, animated: true)
     }

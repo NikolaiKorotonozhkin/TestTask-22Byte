@@ -57,6 +57,7 @@ class GameViewController: UIViewController {
         nextRoundButton.isHidden = true
         restartGameButton.isHidden = true
         robotButton.isHidden = true
+        robotButton.isUserInteractionEnabled = false
     }
     
     //MARK: - Результаты раунда
@@ -126,6 +127,8 @@ class GameViewController: UIViewController {
         nextRoundButton.isHidden = true
         restartGameButton.isHidden = false
         gameResult = "draw"
+        
+        hideOrShowCards(false, 0.5)
     }
     
     //MARK: - Переход к следующему раунду
@@ -150,6 +153,8 @@ class GameViewController: UIViewController {
         localDrawCount = 0
         
         timeDelay = 0.6
+        
+        hideOrShowCards(true, 1)
     }
     
     //MARK: - Перезапуск игры
@@ -181,6 +186,8 @@ class GameViewController: UIViewController {
         drawRoundsCountLabel.text = String(drawRoundsCount)
         
         timeDelay = 0.6
+        
+        hideOrShowCards(true, 1)
     }
     
     //MARK: - Селекторы
@@ -299,6 +306,9 @@ class GameViewController: UIViewController {
                 
                 countOfRounds += 1
                 roundArray.append(result)
+                
+                hideOrShowCards(false, 0.5)
+                
                 return
             }
             
@@ -319,6 +329,9 @@ class GameViewController: UIViewController {
                 
                 countOfRounds += 1
                 roundArray.append(result)
+                
+                hideOrShowCards(false, 0.5)
+                
                 return
             }
         case .draw:
@@ -375,6 +388,18 @@ class GameViewController: UIViewController {
         
         //показываем кнопку сл раунда
         nextRoundButton.isHidden = false
+        
+        hideOrShowCards(false, 0.5)
+    }
+    
+    private func hideOrShowCards(_ bool: Bool, _ alpha: CGFloat) {
+        rockButton.isUserInteractionEnabled = bool
+        paperButton.isUserInteractionEnabled = bool
+        scissorsButton.isUserInteractionEnabled = bool
+        
+        rockButton.alpha = alpha
+        paperButton.alpha = alpha
+        scissorsButton.alpha = alpha
     }
 }
 
